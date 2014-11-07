@@ -5,8 +5,8 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
-        android:targetSdkVersion="21" />
+        android:minSdkVersion="18"
+        android:targetSdkVersion="18" />
 
     <!-- 옵션 퍼미션, 등록할 경우 BLE를 지원하지 않는 단말에서는 앱을 설치 할 수 없다. -->
     <uses-feature

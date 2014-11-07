@@ -7,8 +7,8 @@ import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
@@ -21,7 +21,7 @@ import com.olivestory.ackon.Ackon;
 import com.olivestory.ackon.AckonInfo;
 import com.olivestory.ackon.AckonListener;
 
-public class MainActivity extends ActionBarActivity implements AckonListener {
+public class MainActivity extends Activity implements AckonListener {
 
 	/**
 	 * 신호레벨 리소스
@@ -125,8 +125,8 @@ public class MainActivity extends ActionBarActivity implements AckonListener {
 			runOnUiThread(new Runnable() {
 				@Override
 				public void run() {
-					getSupportActionBar().setTitle(getString(R.string.app_name) + " : " + info.getAlias());
-					getSupportActionBar().setSubtitle("RSSI : " + near.getRssi());
+					getActionBar().setTitle(getString(R.string.app_name) + " : " + info.getAlias());
+					getActionBar().setSubtitle("RSSI : " + near.getRssi());
 
 					// CMS 데이터 반영
 					adapter.setData(info.getKeys(), info.getValues());
@@ -137,7 +137,7 @@ public class MainActivity extends ActionBarActivity implements AckonListener {
 						String name = (String) tag;
 						if (near.getName().equals(name) == false) {
 							findViewById(R.id.layout).startAnimation(
-									AnimationUtils.loadAnimation(getApplicationContext(), R.anim.abc_slide_in_bottom));
+									AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in));
 						}
 					}
 
